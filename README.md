@@ -143,6 +143,10 @@ Play music. Stop music. Fade music. Change music with a fade
 - SceneManager Autoload
 	- Has same methods as SceneTree for changing scenes
 	- Uses VFXManager screen fade
+	
+## Third party addons
+
+[Godot Quick Scenes](https://github.com/KoBeWi/Godot-Quick-Scenes) by [KoBeWi](https://github.com/KoBeWi)
 
 ## Project Template
 
