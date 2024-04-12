@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://2dmufbth2o0p"]
+
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/pause_menu/pause_menu.gd" id="1_66vk3"]
+[ext_resource type="PackedScene" uid="uid://c2geocscjqkdp" path="res://prefabs/ui/menu/content/pause_menu_content/pause_menu_content.tscn" id="2_1614i"]
+
+[node name="Game" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -11.5
+offset_right = 54.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is a game"
+
+[node name="PauseMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_66vk3")
+default_content = ExtResource("2_1614i")

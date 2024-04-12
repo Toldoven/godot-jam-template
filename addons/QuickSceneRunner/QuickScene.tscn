@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6qyveu25w7m5"]
+
+[ext_resource type="Script" path="res://addons/QuickSceneRunner/QuickScene.gd" id="1_jio3d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmcyq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.12549)
+
+[node name="PanelContainer" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_lmcyq")
+script = ExtResource("1_jio3d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Path" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Scene path"
+
+[node name="Del" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+
+[node name="Del2" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Run" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Run this scene"
+
+[node name="Edit" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Edit Scene"
+
+[node name="Bound" type="CheckBox" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Use for shortcut"
+
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/Path" to="." method="_on_path_text_changed"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl45febk3j8qo"]
+
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/menu_container/menu_container.gd" id="1_s3sb3"]
+[ext_resource type="PackedScene" uid="uid://cu18vhyohuk4v" path="res://prefabs/ui/menu/content/main_menu_content/main_menu_content.tscn" id="2_rds0e"]
+
+[node name="MainMenuContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s3sb3")
+default_content = ExtResource("2_rds0e")

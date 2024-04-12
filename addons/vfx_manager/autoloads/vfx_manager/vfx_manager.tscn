@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bknc5qntwwlyn"]
+
+[ext_resource type="Script" path="res://addons/vfx_manager/autoloads/vfx_manager/vfx_manager.gd" id="1_kv34u"]
+[ext_resource type="Script" path="res://addons/vfx_manager/autoloads/vfx_manager/modules/camera_shake.gd" id="2_rwnpf"]
+[ext_resource type="Script" path="res://addons/vfx_manager/autoloads/vfx_manager/modules/freeze_frame.gd" id="3_rolwp"]
+[ext_resource type="Script" path="res://addons/vfx_manager/autoloads/vfx_manager/modules/screen_fade.gd" id="4_11wjp"]
+[ext_resource type="Script" path="res://addons/vfx_manager/autoloads/vfx_manager/modules/screen_flash.gd" id="5_oatyd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qqc80"]
+
+[node name="VfxManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_kv34u")
+
+[node name="CameraShake" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("2_rwnpf")
+noise = SubResource("FastNoiseLite_qqc80")
+
+[node name="FreezeFrame" type="Node" parent="."]
+script = ExtResource("3_rolwp")
+
+[node name="ScreenFade" type="Node" parent="." node_paths=PackedStringArray("_rect")]
+script = ExtResource("4_11wjp")
+_rect = NodePath("../CanvasLayer/FadeRect")
+
+[node name="ScreenFlash" type="Node" parent="." node_paths=PackedStringArray("_rect")]
+script = ExtResource("5_oatyd")
+_rect = NodePath("../CanvasLayer/FlashRect")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="FlashRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

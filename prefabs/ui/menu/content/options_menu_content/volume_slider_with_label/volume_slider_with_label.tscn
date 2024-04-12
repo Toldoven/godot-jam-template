@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://eobaho1q8gvs"]
+
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/volume_slider/volume_slider.gd" id="1_14ryh"]
+
+[node name="VolumeSliderWithLabel" type="HBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Master"
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("1_14ryh")
+audio_bus = &"Master"

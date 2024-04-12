@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu18vhyohuk4v"]
+
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/menu_content/menu_content.gd" id="1_bmov3"]
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_content_button/menu_content_button.gd" id="3_ra1h7"]
+[ext_resource type="PackedScene" uid="uid://bimckxtwokhyl" path="res://prefabs/ui/menu/content/options_menu_content/options_menu_content.tscn" id="4_8e4i1"]
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_scene_button/change_scene_button.gd" id="5_oigqm"]
+
+[node name="MainMenuContent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bmov3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -33.0
+offset_right = 48.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuSceneButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+script = ExtResource("5_oigqm")
+scene_path = "res://scenes/game.tscn"
+
+[node name="MenuContentButton" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("current_menu_content")]
+layout_mode = 2
+text = "Options"
+script = ExtResource("3_ra1h7")
+current_menu_content = NodePath("../..")
+change_to_menu_content_packed = ExtResource("4_8e4i1")
