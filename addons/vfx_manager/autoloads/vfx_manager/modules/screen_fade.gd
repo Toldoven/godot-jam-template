@@ -5,7 +5,7 @@ class_name ScreenFade extends Node
 var _tween: Tween = null
 
 
-func fade_out() -> void:
+func fade_in_fast() -> void:
 	if _tween:
 		_tween.kill()
 	
@@ -18,7 +18,7 @@ func fade_out() -> void:
 	await _tween.finished
 	
 	
-func fade_in() -> void:
+func fade_out_fast() -> void:
 	if _tween:
 		_tween.kill()
 	

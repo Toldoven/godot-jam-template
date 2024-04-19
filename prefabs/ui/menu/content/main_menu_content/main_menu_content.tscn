@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu18vhyohuk4v"]
 
 [ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/menu_content/menu_content.gd" id="1_bmov3"]
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_content_button/menu_content_button.gd" id="3_ra1h7"]
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_content_button/menu_content_button.gd" id="3_ra1h7"]
 [ext_resource type="PackedScene" uid="uid://bimckxtwokhyl" path="res://prefabs/ui/menu/content/options_menu_content/options_menu_content.tscn" id="4_8e4i1"]
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_scene_button/change_scene_button.gd" id="5_oigqm"]
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_scene_button/change_scene_button.gd" id="5_oigqm"]
 
 [node name="MainMenuContent" type="Control"]
 layout_mode = 3

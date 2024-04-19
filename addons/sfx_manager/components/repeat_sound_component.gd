@@ -3,6 +3,8 @@
 
 class_name RepeatSoundComponent extends Node
 
+signal played
+
 @export var player: Node
 
 @export var playing: bool = false:
@@ -46,6 +48,7 @@ func _ready() -> void:
 func _play() -> void:
 	if player.has_method("play"):
 		player.call("play")
+		played.emit()
 	else:
 		push_error("Can't play a sound on a Node because it doesn't have a 'play' method")
 		
@@ -55,6 +58,17 @@ func _stop() -> void:
 		player.call("stop")
 	else:
 		push_error("Can't stop a sound on a Node because it doesn't have a 'stop' method")
+
+
+func force_play() -> void:
+	playing = true
+	_start_timer()	
+	_play()
+
+
+func force_stop() -> void:
+	playing = false
+	_stop()
 
 func _on_timeout() -> void:
 	

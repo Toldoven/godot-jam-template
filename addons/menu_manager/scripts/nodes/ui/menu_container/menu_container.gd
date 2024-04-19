@@ -3,6 +3,10 @@
 
 class_name MenuContainer extends Control
 
+var container: Control
+
+@export var background: PackedScene
+
 @export var default_content: PackedScene:
 	get:
 		return default_content
@@ -27,19 +31,27 @@ func _input(event: InputEvent) -> void:
 
 func _set_default_content() -> void:
 	
-	for child in get_children():
+	for child in container.get_children():
 		child.queue_free()
 	
 	if default_content == null:
 		return
 		
 	var instance := default_content.instantiate() as MenuContent
-	add_child(instance)	
+	container.add_child(instance)	
 	
 	if Engine.is_editor_hint():
 		return
 	
 	instance.menu_container = self
+
+
+func _init() -> void:
+	if background:
+		add_child(background.instantiate())
+	container = Control.new()
+	container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(container)
 
 
 func _ready() -> void:
@@ -57,11 +69,11 @@ func set_content_packed(packed_scene: PackedScene, to_previous: bool = false) ->
 
 
 func set_content(new_content: MenuContent, to_previous: bool = false) -> void:
-	if get_children().size() != 1:
+	if container.get_children().size() != 1:
 		push_error("Expected menu container to have exactly one element")
 		return
 	
-	var current_content := get_child(0)
+	var current_content := container.get_child(0)
 	
 	if not current_content is MenuContent:
 		push_error("Current content is not MenuContent")
@@ -71,7 +83,7 @@ func set_content(new_content: MenuContent, to_previous: bool = false) -> void:
 		push_error("Error while setting menu container content: Content node is expected to be outside of tree")
 		return
 		
-	remove_child(current_content)
+	container.remove_child(current_content)
 	
 	new_content.menu_container = self
 	
@@ -80,7 +92,7 @@ func set_content(new_content: MenuContent, to_previous: bool = false) -> void:
 	else:
 		previous_content = null
 	
-	add_child(new_content)
+	container.add_child(new_content)
 
 
 func set_content_to_previous() -> void:

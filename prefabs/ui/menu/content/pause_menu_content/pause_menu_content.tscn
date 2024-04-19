@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2geocscjqkdp"]
 
 [ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/menu_content/menu_content.gd" id="1_kjxt6"]
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_back_button/menu_back_button.gd" id="2_ipcgu"]
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_content_button/menu_content_button.gd" id="3_fil0h"]
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_scene_button/change_scene_button.gd" id="3_y1177"]
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_back_button/menu_back_button.gd" id="2_2c3yf"]
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_content_button/menu_content_button.gd" id="3_soufe"]
 [ext_resource type="PackedScene" uid="uid://bimckxtwokhyl" path="res://prefabs/ui/menu/content/options_menu_content/options_menu_content.tscn" id="4_mv0q1"]
+[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_scene_button/change_scene_button.gd" id="5_3o4ro"]
 
 [node name="PauseMenuContent" type="Control"]
 layout_mode = 3
@@ -32,18 +32,18 @@ grow_vertical = 2
 [node name="ContinueButton" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("current_menu_content")]
 layout_mode = 2
 text = "Continue"
-script = ExtResource("2_ipcgu")
+script = ExtResource("2_2c3yf")
 current_menu_content = NodePath("../..")
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("current_menu_content")]
 layout_mode = 2
 text = "Options"
-script = ExtResource("3_fil0h")
+script = ExtResource("3_soufe")
 current_menu_content = NodePath("../..")
 change_to_menu_content_packed = ExtResource("4_mv0q1")
 
 [node name="QuitToMenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit To Menu"
-script = ExtResource("3_y1177")
+script = ExtResource("5_3o4ro")
 scene_path = "res://scenes/main.tscn"

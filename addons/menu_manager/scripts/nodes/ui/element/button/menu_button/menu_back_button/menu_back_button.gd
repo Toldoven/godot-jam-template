@@ -1,13 +1,9 @@
-class_name MenuBackButton extends Button
+class_name MenuBackButton extends CustomButton
 
 @export var current_menu_content: MenuContent
 
-
-func _ready() -> void:
-	pressed.connect(_on_button_pressed)
-
-
 func _on_button_pressed() -> void:
+	super()
 	if current_menu_content.menu_container.has_previous():
 		current_menu_content.menu_container.set_content_to_previous()
 	else:

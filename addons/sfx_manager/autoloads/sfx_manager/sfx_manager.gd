@@ -3,6 +3,12 @@
 extends Node
 
 
+func stop_all_2d() -> void:
+	for child in get_children():
+		if child is AudioStreamPlayer2D:
+			child.stop()
+
+
 func play_sfx(sound_effect: SoundEffect, override_bus: StringName = &"") -> AudioStreamPlayer:
 	var player := AudioStreamPlayer.new()
 	add_child(player)

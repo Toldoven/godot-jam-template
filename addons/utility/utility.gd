@@ -23,6 +23,11 @@ static func enable_collisions(node: Node) -> void:
 	_disable_or_enable_collisions(node, false)
 
 
+static func kill_tween(tween: Tween) -> void:
+	if is_instance_valid(tween) and tween.is_running():
+		tween.kill()
+
+
 # A formula for [framerate independent lerp](https://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/)
 # Example: lerp(..., Utility.fi_lerp(15.0, delta))
 # Average recomended speed value is around 10.0 - 20.0

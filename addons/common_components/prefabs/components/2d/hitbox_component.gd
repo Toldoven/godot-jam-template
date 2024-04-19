@@ -5,6 +5,17 @@ signal hit(target: HurtboxComponent)
 @export var damage_stats: DamageStats
 @export var knockback_vector: Vector2 = Vector2.ZERO
 
+
+func quick_toogle() -> void:
+	Utility.enable_collisions(self)
+	await get_tree().create_timer(0.1).timeout
+	Utility.disable_collisions(self)
+
+
+func _ready() -> void:
+	area_entered.connect(_on_area_entered)
+
+
 func _on_area_entered(area: Area2D) -> void:
 	
 	if not area is HurtboxComponent:

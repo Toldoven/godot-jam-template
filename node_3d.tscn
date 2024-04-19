@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://kv4l7cn55rmc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8m2"]
+albedo_color = Color(0.811765, 0.360784, 0.0313726, 1)
+grow_amount = 0.36
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s7i1w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jpvcy"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(1, 1, 1, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_bgbcf"]
+sky_material = SubResource("ProceduralSkyMaterial_jpvcy")
+
+[sub_resource type="Environment" id="Environment_tgs4y"]
+background_mode = 2
+sky = SubResource("Sky_bgbcf")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_pa8m2")
+mesh = SubResource("CylinderMesh_s7i1w")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.711484, -0.418323, 0.56462, 0.0432953, 0.828068, 0.558953, -0.701367, -0.373241, 0.607269, 2.57096, 1.44897, 2.06124)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tgs4y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

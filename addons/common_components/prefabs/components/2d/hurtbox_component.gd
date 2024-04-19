@@ -6,8 +6,6 @@ signal hit(damage_stats: DamageStats, knockback_vector: Vector2)
 
 @export var velocity_component: VelocityComponent
 
-@export var gives_soul: bool = true;
-
 @export var invincible: bool = false:
 	set(value):
 		invincible = value

@@ -4,6 +4,7 @@ class_name PauseMenu extends MenuContainer
 
 
 func _init() -> void:
+	super()
 	process_mode = PROCESS_MODE_ALWAYS
 
 

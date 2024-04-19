@@ -8,6 +8,10 @@ signal controlled_velocity_changed(new_velocity: Vector2)
 
 @export var debug: bool = false
 
+@export var enable_gravity: bool = true
+
+var gravity := ProjectSettings.get_setting("physics/2d/default_gravity") as float
+
 const knockback_velocity_smoothing_value: float = 15.0
 # 0.0 controlled velocity is not affected
 # 1.0 controlled speed can be fully negated by knockback  
@@ -28,6 +32,8 @@ var controlled_velocity: Vector2 = Vector2.ZERO:
 
 var knockback_velocity: Vector2 = Vector2.ZERO
 
+var gravity_velocity: Vector2 = Vector2.ZERO
+
 var collided: bool = false
 
 func _physics_process(delta: float) -> void:
@@ -41,6 +47,11 @@ func _physics_process(delta: float) -> void:
 		
 	var knockback_resistance_multiplier := 1.0 - knockback_resistance
 	
-	target.velocity = knockback_velocity * knockback_resistance_multiplier + controlled_velocity * knockback_penalty_strength
+	if not target.is_on_floor() and enable_gravity:
+		gravity_velocity.y += gravity * delta
+	else:
+		gravity_velocity.y = 0.0
+	
+	target.velocity = knockback_velocity * knockback_resistance_multiplier + controlled_velocity * knockback_penalty_strength + gravity_velocity
 	
 	collided = target.move_and_slide()

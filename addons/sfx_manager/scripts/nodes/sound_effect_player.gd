@@ -37,7 +37,7 @@ func sync_values() -> void:
 
 func _ready() -> void:
 	_player = AudioStreamPlayer.new()
-	_player.finished.connect(finished.emit)
+	_player.finished.connect(func() -> void: finished.emit())
 	add_child(_player)
 	sync_values()
 	
