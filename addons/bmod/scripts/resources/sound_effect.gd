@@ -1,5 +1,5 @@
 @tool
-@icon("res://addons/sfx_manager/icons/SoundEffect.svg")
+@icon("res://addons/bmod/icons/SoundEffect.svg")
 
 class_name SoundEffect extends Resource
 
@@ -10,11 +10,12 @@ const BASE_ERROR: String = "SoundEffect is an abstract class. You can't use it o
 	set(value):
 		meta = value
 		meta.changed.connect(func() -> void:
-			emit_changed()	
+			emit_changed()
+			_on_changed()
 		)
 
 
-@export_category("Debug")
+@export_category("Play")
 
 @export var play: bool = false:
 	set(value):
@@ -80,4 +81,4 @@ func test_play() -> void:
 	if not Engine.is_editor_hint():
 		return
 		
-	SfxManager.play_sfx(self)
+	BMOD.play_sfx(self)

@@ -1,5 +1,5 @@
 @tool
-@icon("res://addons/sfx_manager/icons/RepeatSoundComponent.svg")
+@icon("res://addons/bmod/icons/RepeatSoundComponent.svg")
 
 class_name RepeatSoundComponent extends Node
 
@@ -17,7 +17,7 @@ signal played
 @export var autoplay: bool = false;
 		
 @export var wait_time: float = 0.15
-@export var wait_time_variance: float = 0.0
+@export var wait_time_variation: float = 0.0
 
 @export var stop_on_timeout: bool = true
 
@@ -29,7 +29,7 @@ func _start_if_playing_enabled() -> void:
 		_start_timer()
 
 func _start_timer() -> void:
-	_timer.wait_time = wait_time + SfxManager.get_variance(wait_time_variance)
+	_timer.wait_time = wait_time + BMOD.get_variation(wait_time_variation)
 	_timer.start()
 
 

@@ -1,15 +1,15 @@
 @tool
-@icon("res://addons/sfx_manager/icons/SoundEffectPlayer.svg")
+@icon("res://addons/bmod/icons/SoundEffectPlayer.svg")
 
 class_name SoundEffectPlayer extends Node
 
-signal finished()
+signal finished
 
 @export var sound_effect: SoundEffect
 
 @export var autoplay: bool = false
 
-@export var bus: StringName = SfxManager.default_sfx_bus():
+@export var bus: StringName = BMOD.default_sfx_bus():
 	set(value):
 		bus = value
 		sync_values()

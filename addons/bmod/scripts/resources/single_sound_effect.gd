@@ -1,5 +1,5 @@
 @tool
-@icon("res://addons/sfx_manager/icons/SingleSoundEffect.svg")
+@icon("res://addons/bmod/icons/SingleSoundEffect.svg")
 
 class_name SingleSoundEffect extends SoundEffect
 

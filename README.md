@@ -9,46 +9,6 @@ If you dare to try you can either:
 - Clone the repo and use it as a template
 - Clone the repo and add copy individual addons from the addons folder into your project
 
-## SfxManager
-
-mom can we have FMOD?
-
-no we have FMOD at home
-
-FMOD at home:
-
-### Features
-
-- SoundEffect Resource
-	- An abstraction that allows you to set volume, volume variance, pitch and pitch variance on a resource
-	- You can preview the sound in the editor. Easy to tweak
-	- SingleSoundEffect and MultiSoundEffect
-		- Both extend the same base class. Where you can use one you can also use the other 
-		- MultiSoundEffect chooses a random sound from a weighted pool of sounds
-- SoundEffectPlayer Node
-	- Has the same functionality as AudioStreamPlayer but works with SoundEffect
-	- Has a 2D and a 3D version
-- SfxManager Autoload
-	- A quick way to play SoundEffect without a need for a SoundEffectPlayer
-	- You can use it to play SoundEffect after you free a scene. E.g. death sound
-	- `play_sfx(...)`, `play_sfx_2d(..., position: Vector2)`, `play_sfx_3d(..., position: Vector3)`
-- RepeatSoundComponent Node
-	- Usefull when you want to make a repeating sound. E.g. steps or Undertale-like dialogue SFX
-	- Uses duck typing. You can use it with any of the AudioStreamPlayer or SoundEffectPlayer nodes
-		- It just calls `play(...)` and `stop()` methods
-	- You can preview the sound in the editor. Easy to tweak
-	
-### Project Settings
-- `audio/sfx_manager/default_sfx_bus`
-	- The Audio Bus that will be used by default on SoundEffectPlayer and in SfxManager
-	- It's recomended to create a separate audio bus 
-
-### Note
-
-The only reason for this to exist is because FMOD integration for Godot doesn't support HTML export yet. It will probably be obsolete in like a month
-
-It's still pretty nice to use and covers most of the needs for a game jam game, so maybe I'll keep using it if I find FMOD overkill for game jams
-
 ## MenuManager
 
 A template for the main menu, options menu with volume settings and pause menu
@@ -144,9 +104,11 @@ Play music. Stop music. Fade music. Change music with a fade
 	- Has same methods as SceneTree for changing scenes
 	- Uses VFXManager screen fade
 	
-## Third party addons
+## Other addons
 
 [Godot Quick Scenes](https://github.com/KoBeWi/Godot-Quick-Scenes) by [KoBeWi](https://github.com/KoBeWi)
+
+[BMOD](htps://github.com/Toldoven/bmod) by [Me](https://github.com/Toldoven)
 
 ## Project Template
 

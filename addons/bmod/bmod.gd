@@ -1,24 +1,31 @@
 @tool
 extends EditorPlugin
 
-const AUTOLOAD_NAME = "SfxManager"
+const AUTOLOAD_NAME = "BMOD"
 
 
 func _enter_tree() -> void:
-	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/sfx_manager/autoloads/sfx_manager/sfx_manager.tscn")
-	
-	add_custom_project_setting("audio/sfx_manager/default_sfx_bus", "Master", TYPE_STRING_NAME)
+	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/bmod/autoloads/bmod/bmod.tscn")
+
+	add_custom_project_setting("audio/bmod/default_sfx_bus", "Master", TYPE_STRING_NAME)
 	
 	var error: int = ProjectSettings.save()
+	
 	if error:
-		push_error("Encountered error %d when saving project settings." % error)
+		push_error("Error when saving project settings: %s" % error)
 
 
 func _exit_tree() -> void:
 	remove_autoload_singleton(AUTOLOAD_NAME)
 
 
-func add_custom_project_setting(name: String, default_value: Variant, type: int, hint: int = PROPERTY_HINT_NONE, hint_string: String = "") -> void:
+func add_custom_project_setting(
+	name: String,
+	default_value: Variant,
+	type: int,
+	hint: int = PROPERTY_HINT_NONE,
+	hint_string: String = "",
+) -> void:
 
 	if ProjectSettings.has_setting(name):
 		return

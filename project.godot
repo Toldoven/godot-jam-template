@@ -39,6 +39,7 @@ SceneManager="*res://addons/scene_manager/autoloads/scene_manager/scene_manager.
 MusicManager="*res://addons/music_manager/autoloads/music_manager/music_manager.tscn"
 MenuEventBus="*res://addons/menu_manager/autoloads/menu_event_bus/menu_event_bus.gd"
 InputBuffer="*res://addons/input_buffer/input_buffer.gd"
+BMOD="*res://addons/bmod/autoloads/bmod/bmod.tscn"
 
 [debug]
 
@@ -58,7 +59,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/QuickSceneRunner/plugin.cfg", "res://addons/common_components/plugin.cfg", "res://addons/input_buffer/plugin.cfg", "res://addons/menu_manager/plugin.cfg", "res://addons/music_manager/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/sfx_manager/plugin.cfg", "res://addons/utility/plugin.cfg", "res://addons/vfx_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/QuickSceneRunner/plugin.cfg", "res://addons/bmod/plugin.cfg", "res://addons/common_components/plugin.cfg", "res://addons/input_buffer/plugin.cfg", "res://addons/menu_manager/plugin.cfg", "res://addons/music_manager/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/sfx_manager/plugin.cfg", "res://addons/utility/plugin.cfg", "res://addons/vfx_manager/plugin.cfg")
 
 [gui]
 

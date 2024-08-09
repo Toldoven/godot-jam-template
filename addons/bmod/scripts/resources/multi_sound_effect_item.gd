@@ -1,5 +1,5 @@
 @tool
-@icon("res://addons/sfx_manager/icons/MultiSoundEffectItem.svg")
+@icon("res://addons/bmod/icons/MultiSoundEffectItem.svg")
 
 class_name MultiSoundEffectItem extends Resource
 	

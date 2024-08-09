@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbu2ji46kq2tu"
-path="res://.godot/imported/SoundEffectPlayer2D.svg-3f2374406f899bc9c9979f01459b6c8f.ctex"
+uid="uid://bhs3me5wqwubb"
+path="res://.godot/imported/SoundEffectMeta.svg-8a1c6d920209e3a644f9703492ff08a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/sfx_manager/icons/SoundEffectPlayer2D.svg"
-dest_files=["res://.godot/imported/SoundEffectPlayer2D.svg-3f2374406f899bc9c9979f01459b6c8f.ctex"]
+source_file="res://addons/bmod/icons/SoundEffectMeta.svg"
+dest_files=["res://.godot/imported/SoundEffectMeta.svg-8a1c6d920209e3a644f9703492ff08a1.ctex"]
 
 [params]
 

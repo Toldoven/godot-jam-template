@@ -1,5 +1,5 @@
 @tool
-@icon("res://addons/sfx_manager/icons/MultiSoundEffect.svg")
+@icon("res://addons/bmod/icons/MultiSoundEffect.svg")
 
 class_name MultiSoundEffect extends SoundEffect
 
