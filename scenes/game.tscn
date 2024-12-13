@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2dmufbth2o0p"]
 
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/pause_menu/pause_menu.gd" id="1_66vk3"]
+[ext_resource type="Script" uid="uid://dhjv0baqjnvri" path="res://addons/menu_manager/scripts/nodes/ui/pause_menu/pause_menu.gd" id="1_66vk3"]
 [ext_resource type="PackedScene" uid="uid://c2geocscjqkdp" path="res://prefabs/ui/menu/content/pause_menu_content/pause_menu_content.tscn" id="2_1614i"]
 
 [node name="Game" type="Node"]

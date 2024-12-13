@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	if pressed_sound_effect:
-		SfxManager.play_sfx(pressed_sound_effect)
+		BMOD.play_sfx(pressed_sound_effect)
