@@ -2,7 +2,7 @@ name: Export web on push
 on: push
 
 env:
-  GODOT_VERSION: 4.2.1
+  GODOT_VERSION: 4.3
   ITCH_GAME: ${{ vars.ITCH_GAME }}
   ITCH_USER: ${{ vars.ITCH_USER }}
   
@@ -11,7 +11,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:4.2.1
+      image: barichello/godot-ci:4.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2

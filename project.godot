@@ -20,7 +20,7 @@ quick_scenes/scene_list=PackedStringArray("res://scenes/game.tscn")
 
 config/name="Template"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0.14902, 0.14902, 0.14902, 1)
 boot_splash/image="res://assets/art/team_logo.png"
@@ -55,6 +55,10 @@ window/size/viewport_height=1080
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Template"
 
 [editor_plugins]
 
@@ -125,7 +129,4 @@ input_buffer/buffer_ms=250
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-anti_aliasing/quality/msaa_2d=2
-anti_aliasing/quality/msaa_3d=2
 anti_aliasing/quality/screen_space_aa=1
-environment/defaults/default_environment="uid://cm77bbr0io118"
