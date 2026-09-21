@@ -7,7 +7,6 @@ const AUTOLOAD_NAME = "InputBuffer"
 func _enter_tree() -> void:
 	add_custom_project_setting("input_buffer/input_buffer/buffer_ms", 150, TYPE_INT)	
 	add_custom_project_setting("input_buffer/input_buffer/action_list", PackedStringArray([]), TYPE_PACKED_STRING_ARRAY)
-	add_custom_project_setting("input_buffer/input_buffer/test", [], TYPE_ARRAY, PROPERTY_HINT_TYPE_STRING, "%d:" % ["SoundEffect"])
 
 	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/input_buffer/input_buffer.gd")
 
