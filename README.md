@@ -108,7 +108,7 @@ Play music. Stop music. Fade music. Change music with a fade
 
 [Godot Quick Scenes](https://github.com/KoBeWi/Godot-Quick-Scenes) by [KoBeWi](https://github.com/KoBeWi)
 
-[BMOD](htps://github.com/Toldoven/bmod) by [Me](https://github.com/Toldoven)
+[BMOD](https://github.com/Toldoven/bmod) by [Me](https://github.com/Toldoven)
 
 ## Project Template
 
