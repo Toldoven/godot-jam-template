@@ -1,5 +1,7 @@
-name: Export web on push
-on: push
+name: Export web on release
+on:
+  push:
+    branches: [release]
 
 env:
   GODOT_VERSION: 4.7.2

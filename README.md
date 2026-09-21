@@ -9,6 +9,19 @@ If you dare to try you can either:
 - Clone the repo and use it as a template
 - Clone the repo and add copy individual addons from the addons folder into your project
 
+## Getting Started
+
+Needs **Godot 4.7**.
+
+With [devenv](https://devenv.sh) and [direnv](https://direnv.net) installed, `cd` into the repo and the right Godot is on your PATH automatically. Without direnv, run `devenv shell`.
+
+- `editor` - open the project in the editor
+- `play` - run the game without opening the editor
+
+Not using Nix? Just open `project.godot` with Godot 4.7 yourself, everything else works the same.
+
+Branches: you work on `develop` (the default), and merge into `release` when you want a build on itch.io. See [Web Export](#web-export).
+
 ## MenuManager
 
 A template for the main menu, options menu with volume settings and pause menu
@@ -123,3 +136,19 @@ Play music. Stop music. Fade music. Change music with a fade
 - Particle Assets
 - Limit FPS to 60 in order to prevent jittering 
 - Window Settings
+
+## Web Export
+
+Work happens on `develop`. Pushing to `release` builds the HTML5 export and uploads it to itch.io, so you deploy when you decide to, not on every commit:
+
+```
+git switch release && git merge develop && git push
+```
+
+The workflow ships **disabled**, so nothing happens until you turn it on in your own repo:
+
+1. Actions tab -> enable workflows, then enable "Export web on release"
+2. Add the repo variables `ITCH_USER` and `ITCH_GAME` (Settings -> Secrets and variables -> Actions -> Variables)
+3. Add the repo secret `BUTLER_CREDENTIALS` with an [itch.io API key](https://itch.io/user/settings/api-keys)
+
+It uploads to the `html5` channel. To build the same thing locally you need the export templates for 4.7, which devenv does not install - grab them from the editor's Manage Export Templates dialog.
