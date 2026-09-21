@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu18vhyohuk4v"]
+[gd_scene format=3 uid="uid://cu18vhyohuk4v"]
 
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/menu_content/menu_content.gd" id="1_bmov3"]
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_content_button/menu_content_button.gd" id="3_ra1h7"]
+[ext_resource type="Script" uid="uid://3bnpeuhpqlyl" path="res://addons/menu_manager/scripts/nodes/ui/menu_content/menu_content.gd" id="1_bmov3"]
+[ext_resource type="Script" uid="uid://c41bmh7jd6nht" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_content_button/menu_content_button.gd" id="3_ra1h7"]
 [ext_resource type="PackedScene" uid="uid://bimckxtwokhyl" path="res://prefabs/ui/menu/content/options_menu_content/options_menu_content.tscn" id="4_8e4i1"]
-[ext_resource type="Script" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_scene_button/change_scene_button.gd" id="5_oigqm"]
+[ext_resource type="Script" uid="uid://ckliagjxwht5e" path="res://addons/menu_manager/scripts/nodes/ui/element/button/menu_button/menu_scene_button/change_scene_button.gd" id="5_oigqm"]
 
-[node name="MainMenuContent" type="Control"]
+[node name="MainMenuContent" type="Control" unique_id=1638536429]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bmov3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=107680432]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,13 +28,13 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuSceneButton" type="Button" parent="VBoxContainer"]
+[node name="MenuSceneButton" type="Button" parent="VBoxContainer" unique_id=2077032741]
 layout_mode = 2
 text = "Start Game"
 script = ExtResource("5_oigqm")
 scene_path = "res://scenes/game.tscn"
 
-[node name="MenuContentButton" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("current_menu_content")]
+[node name="MenuContentButton" type="Button" parent="VBoxContainer" unique_id=1962146697 node_paths=PackedStringArray("current_menu_content")]
 layout_mode = 2
 text = "Options"
 script = ExtResource("3_ra1h7")
