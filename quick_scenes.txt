@@ -1,0 +1,4 @@
+[{
+&"path": "res://scenes/game.tscn",
+&"style": {}
+}]

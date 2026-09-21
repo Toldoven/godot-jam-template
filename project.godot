@@ -8,14 +8,6 @@
 
 config_version=5
 
-[addons]
-
-quick_scenes/quick_run_shortcut=Object(Shortcut,"resource_local_to_scene":false,"resource_name":"","events":[Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194340,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-],"script":null)
-
-quick_scenes/selected_scene=0
-quick_scenes/scene_list=PackedStringArray("res://scenes/game.tscn")
-
 [application]
 
 config/name="Template"
