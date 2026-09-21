@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 .env
+
+# Local web export output
+build/
+
+# devenv / direnv
+.devenv/
+.direnv/
